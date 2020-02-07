@@ -15,7 +15,7 @@ code {
 }
 
 .prism {
-  border: black solid 10px;
+  border: bisque solid 10px;
   background: #fafafa;
   font-family: "Fira code", "Fira Mono", monospace;
   font-size: 12px;

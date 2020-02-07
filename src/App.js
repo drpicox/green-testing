@@ -7,7 +7,7 @@ import { start, next } from "./ducks";
 
 const store = createAppStore();
 store.dispatch(start());
-store.dispatch(next());
+if (false) store.dispatch(next());
 
 // ⛳🏌🕳🚩🏌️‍♂️🏌️‍♀️
 

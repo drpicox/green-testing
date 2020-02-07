@@ -11,7 +11,7 @@ export function Tests() {
       <div
         className="prism"
         style={{
-          border: "none",
+          border: "lightgreen solid 7px",
           margin: "1em auto",
           maxWidth: "60em"
         }}

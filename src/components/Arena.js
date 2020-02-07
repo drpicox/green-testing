@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import prettier from "prettier/standalone";
+import parser_babylon from "prettier/parser-babylon";
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
@@ -10,9 +12,22 @@ import { Tests } from "./Tests";
 
 export function Arena() {
   const code = useSelector(getCode);
+  const success = useSelector(areTestsPassing);
   const dispatch = useDispatch();
 
-  const success = useSelector(areTestsPassing);
+  useEffect(() => {
+    if (success)
+      dispatch(
+        changeCode(
+          prettier
+            .format(code, {
+              parser: "babylon",
+              plugins: [parser_babylon]
+            })
+            .replace(/\n$/, "")
+        )
+      );
+  }, [success]);
 
   return (
     <div>
