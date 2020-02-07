@@ -6,7 +6,7 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import { useSelector, useDispatch } from "react-redux";
-import { getCode, changeCode, areTestsPassing, next } from "../ducks";
+import { getCode, changeCode, areTestsPassing, next } from "../eggs";
 import { Counter } from "./Counter";
 import { Tests } from "./Tests";
 

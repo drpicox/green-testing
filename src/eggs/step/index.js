@@ -1,3 +1,5 @@
+import { stepReducer } from "./stepReducer";
+
 export * from "./changeCode";
 export * from "./getCode";
 export * from "./getStep";
@@ -6,4 +8,5 @@ export * from "./getTestsResult";
 export * from "./areTestsPassing";
 export * from "./next";
 export * from "./start";
-export * from "./stepReducer";
+
+export default ({ reduce }) => reduce("step", stepReducer);

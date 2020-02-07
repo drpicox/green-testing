@@ -1,9 +1,9 @@
 import React from "react";
 import { Provider, useSelector } from "react-redux";
-import { createAppStore, getStep } from "./ducks";
+import { createAppStore, getStep } from "./eggs";
 import "./App.css";
 import { Arena, Welcome } from "./components";
-import { start, next } from "./ducks";
+import { start, next } from "./eggs";
 
 const store = createAppStore();
 store.dispatch(start());

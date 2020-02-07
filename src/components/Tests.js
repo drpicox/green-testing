@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { getTests, getTestsResult } from "../ducks";
+import { getTests, getTestsResult } from "../eggs";
 
 export function Tests() {
   const tests = useSelector(getTests);

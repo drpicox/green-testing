@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { start } from "../ducks";
+import { start } from "../eggs";
 
 export function Welcome() {
   const dispatch = useDispatch();

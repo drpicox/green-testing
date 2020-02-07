@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getStep, areTestsPassing } from "../ducks";
+import { getStep, areTestsPassing } from "../eggs";
 
 export function Counter() {
   const { keystrokes } = useSelector(getStep);
