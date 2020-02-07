@@ -4,27 +4,18 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import { useSelector, useDispatch } from "react-redux";
-import { getTest, getCode, changeCode, isTestPassing, next } from "../ducks";
+import { getCode, changeCode, areTestsPassing, next } from "../ducks";
 import { Counter } from "./Counter";
+import { Tests } from "./Tests";
 
 export function Arena() {
-  const test = useSelector(getTest);
   const code = useSelector(getCode);
   const dispatch = useDispatch();
-  console.log(dispatch, next);
 
-  const success = useSelector(isTestPassing);
+  const success = useSelector(areTestsPassing);
 
   return (
     <div>
-      <Editor
-        className="prism"
-        value={test}
-        onValueChange={() => {}}
-        highlight={code => highlight(code, languages.js)}
-        padding={10}
-      />
-      <br />
       <Counter />
       <Editor
         className="prism"
@@ -49,6 +40,8 @@ export function Arena() {
           </span>
         </div>
       )}
+      <br />
+      <Tests />
     </div>
   );
 }

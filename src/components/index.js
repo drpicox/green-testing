@@ -1,3 +1,3 @@
 export * from "./Arena";
-export * from "./Editor";
+export * from "./Tests";
 export * from "./Welcome";

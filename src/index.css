@@ -19,6 +19,8 @@ code {
   background: #fafafa;
   font-family: "Fira code", "Fira Mono", monospace;
   font-size: 12px;
+  margin: auto;
+  max-width: 50em;
 }
 textarea:focus, input:focus{
   outline: none;

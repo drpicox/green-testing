@@ -3,11 +3,11 @@ import { Provider, useSelector } from "react-redux";
 import { createAppStore, getStep } from "./ducks";
 import "./App.css";
 import { Arena, Welcome } from "./components";
-import { start } from "./ducks";
+import { start, next } from "./ducks";
 
 const store = createAppStore();
-// store.dispatch(start());
-// store.dispatch(next());
+store.dispatch(start());
+store.dispatch(next());
 
 // ⛳🏌🕳🚩🏌️‍♂️🏌️‍♀️
 
