@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider, useSelector } from "react-redux";
+import { createAppStore, getStep } from "./ducks";
+import "./App.css";
+import { Arena, Welcome } from "./components";
+import { start } from "./ducks";
 
+const store = createAppStore();
+// store.dispatch(start());
+// store.dispatch(next());
+
+// ⛳🏌🕳🚩🏌️‍♂️🏌️‍♀️
+
+function ImplApp() {
+  const step = useSelector(getStep);
+
+  if (!step) return <Welcome />;
+  return <Arena step={step} />;
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ImplApp />
+    </Provider>
   );
 }
 
