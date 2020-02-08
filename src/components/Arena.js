@@ -6,13 +6,21 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import { useSelector, useDispatch } from "react-redux";
-import { getCode, changeCode, areTestsPassing, next } from "../eggs";
+import {
+  getCode,
+  changeCode,
+  areTestsPassing,
+  next,
+  finish,
+  isLastStep
+} from "../eggs";
 import { Counter } from "./Counter";
 import { Tests } from "./Tests";
 
 export function Arena() {
   const code = useSelector(getCode);
   const success = useSelector(areTestsPassing);
+  const lastStep = useSelector(isLastStep);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,6 +35,7 @@ export function Arena() {
             .replace(/\n$/, "")
         )
       );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [success]);
 
   return (
@@ -39,7 +48,7 @@ export function Arena() {
         highlight={code => highlight(code, languages.js)}
         padding={10}
       />
-      {success && (
+      {!success && (
         <div style={{ textAlign: "center" }}>
           <br />
           <span
@@ -51,7 +60,7 @@ export function Arena() {
             }}
             onClick={() => dispatch(next())}
           >
-            Next »
+            {lastStep ? "Finish" : "Next"} »
           </span>
         </div>
       )}

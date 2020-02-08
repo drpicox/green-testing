@@ -13,7 +13,7 @@ export default {
     ...[
       1,
       2,
-      3,
+      3 /*
       5,
       6,
       7,
@@ -34,7 +34,7 @@ export default {
       22,
       23,
       24,
-      25
+      25*/
     ].map(n => ({
       test: `expect(primeFactorsOf(${n})).toEqual([${primeFactorsOf(n)}])`
     })),

@@ -1,11 +1,13 @@
 import { stepReducer } from "./stepReducer";
 
+export * from "./areTestsPassing";
 export * from "./changeCode";
-export * from "./getCode";
+export * from "./getIndex";
+export * from "./getKeystrokes";
 export * from "./getStep";
 export * from "./getTests";
 export * from "./getTestsResult";
-export * from "./areTestsPassing";
+export * from "./isLastStep";
 export * from "./next";
 export * from "./start";
 

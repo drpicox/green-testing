@@ -1,6 +1,8 @@
-import eggStep from "./step";
-import { createEggStore } from "./eggine";
+import code from "./code";
+import step from "./step";
+import steps from "./steps";
+import { hatchStore } from "./eggine";
 
 export function createAppStore() {
-  return createEggStore(eggStep);
+  return hatchStore(code, step, steps);
 }

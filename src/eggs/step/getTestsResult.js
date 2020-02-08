@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { getCode } from "./getCode";
+import { getCode } from "../code/getCode";
 import { getTests } from "./getTests";
 import { parseAndRunTests } from "../../test";
 
