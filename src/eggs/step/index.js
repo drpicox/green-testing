@@ -8,6 +8,7 @@ export * from "./getStep";
 export * from "./getTests";
 export * from "./getTestsResult";
 export * from "./isLastStep";
+export * from "./isPastLastStep";
 export * from "./next";
 export * from "./start";
 

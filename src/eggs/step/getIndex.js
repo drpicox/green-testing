@@ -1,5 +1,5 @@
 import { getStep } from "./getStep";
 
 export function getIndex(state) {
-  return getStep(state).index;
+  return getStep(state)?.index;
 }

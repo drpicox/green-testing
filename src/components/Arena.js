@@ -11,7 +11,6 @@ import {
   changeCode,
   areTestsPassing,
   next,
-  finish,
   isLastStep
 } from "../eggs";
 import { Counter } from "./Counter";

@@ -1,11 +1,13 @@
 import { NEXT } from "../step/next";
 
-export function reduceSteps(state = [], action) {
-  switch (action.type) {
-    case NEXT: {
-      return [...state, { keystrokes: action.keystrokes }];
+export function reduceSteps({ reduce }) {
+  reduce("steps", (state = [], action) => {
+    switch (action.type) {
+      case NEXT: {
+        return [...state, { keystrokes: action.keystrokes }];
+      }
+      default:
+        return state;
     }
-    default:
-      return state;
-  }
+  });
 }
