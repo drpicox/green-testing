@@ -2,6 +2,7 @@ import exampleData from "../../example-data";
 import { START } from "./start";
 import { CHANGE_CODE } from "./changeCode";
 import { NEXT } from "./next";
+import { FINISH } from "./finish";
 
 export function stepReducer(state = null, action) {
   switch (action.type) {
@@ -27,6 +28,10 @@ export function stepReducer(state = null, action) {
         index: state.index + 1,
         keystrokes: 0
       };
+    }
+
+    case FINISH: {
+      return null;
     }
 
     default:

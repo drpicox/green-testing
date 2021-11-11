@@ -1,19 +1,13 @@
 import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
 import { getSteps } from "../eggs/steps";
+import { finish } from "../eggs";
 
 export function Score() {
   const steps = useSelector(getSteps);
+  const dispatch = useDispatch();
 
   return useMemo(
     () => (
@@ -57,6 +51,12 @@ export function Score() {
           <Tooltip />
           <Bar dataKey="Keystrokes" fill="#8884d8" />
         </BarChart>
+        <br />
+        <br />
+        <br />
+        <span onClick={() => dispatch(finish())} style={{ cursor: "pointer" }}>
+          Home »
+        </span>
       </div>
     ),
     [steps]

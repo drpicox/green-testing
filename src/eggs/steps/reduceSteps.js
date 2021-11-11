@@ -1,4 +1,4 @@
-import { NEXT } from "../step/next";
+import { NEXT, FINISH } from "../step";
 
 export function reduceSteps({ reduce }) {
   reduce("steps", (state = [], action) => {
@@ -6,6 +6,11 @@ export function reduceSteps({ reduce }) {
       case NEXT: {
         return [...state, { keystrokes: action.keystrokes }];
       }
+
+      case FINISH: {
+        return [];
+      }
+
       default:
         return state;
     }

@@ -2,6 +2,7 @@ import { stepReducer } from "./stepReducer";
 
 export * from "./areTestsPassing";
 export * from "./changeCode";
+export * from "./finish";
 export * from "./getIndex";
 export * from "./getKeystrokes";
 export * from "./getStep";

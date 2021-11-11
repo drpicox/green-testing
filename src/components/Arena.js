@@ -11,7 +11,7 @@ import {
   changeCode,
   areTestsPassing,
   next,
-  isLastStep
+  isLastStep,
 } from "../eggs";
 import { Counter } from "./Counter";
 import { Tests } from "./Tests";
@@ -29,7 +29,7 @@ export function Arena() {
           prettier
             .format(code, {
               parser: "babylon",
-              plugins: [parser_babylon]
+              plugins: [parser_babylon],
             })
             .replace(/\n$/, "")
         )
@@ -43,11 +43,11 @@ export function Arena() {
       <Editor
         className="prism"
         value={code}
-        onValueChange={code => dispatch(changeCode(code))}
-        highlight={code => highlight(code, languages.js)}
+        onValueChange={(code) => dispatch(changeCode(code))}
+        highlight={(code) => highlight(code, languages.js)}
         padding={10}
       />
-      {!success && (
+      {success && (
         <div style={{ textAlign: "center" }}>
           <br />
           <span
@@ -55,7 +55,7 @@ export function Arena() {
               color: "yellow",
               fontWeight: "bolder",
               textDecoration: "underline",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
             onClick={() => dispatch(next())}
           >
